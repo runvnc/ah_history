@@ -46,7 +46,9 @@ async def recent_chats(path):
 async def get_session_list(request: Request, agent: str = "/"):
     try:
         user = request.state.user
-        dir = f"data/chat/{agent}"
+        root = os.getcwd()
+        dir = f"{root}/data/chat/{agent}"
+        print("ah_history dir is", dir)
         #dir = f"data/chat/{user}/{agent}"
         chat = await recent_chats(dir)
         return JSONResponse(chat)
