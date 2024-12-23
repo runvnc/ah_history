@@ -102,12 +102,23 @@ groupByDate(chats) {
     }, {});
 }
 
+getText(chat) {
+    // if string, return string
+    if (typeof chat === 'string') {
+      return chat;
+    } else {
+      if (chat.text) return chat.text + ""
+      if (chat.content) return chat.content + ""
+      if (chat.descr) return chat.descr + ""
+    }
+  }
+
 // Function to render a chat item
 renderChat(chat) {
     return html`
         <div class="chat-item">
             <a href="/session/${this.agent_name}/${chat.log_id}" target="_blank">
-                <li>"${chat.descr.substring(0, 50)}..."</li>
+                <li>"${this.getText(chat).substring(0, 50)}..."</li>
             </a>
         </div>
     `;
