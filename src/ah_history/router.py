@@ -5,9 +5,6 @@ import shutil
 import base64
 import json
 import mimetypes
-from ..commands import command_manager
-from ..services import service_manager
-from ..chatcontext import ChatContext
 
 router = APIRouter()
 
