@@ -1,0 +1,17 @@
+{
+  "name": "History",
+  "version": "1.0.0",
+  "description": "Chat history viewer and manager",
+  "services": [],
+  "commands": [],
+  "routes": [
+    {
+      "path": "/session_list/{agent}",
+      "method": "GET",
+      "handler": "get_session_list"
+    }
+  ],
+  "inject": {
+    "sidebar": "history.jinja2"
+  }
+}
