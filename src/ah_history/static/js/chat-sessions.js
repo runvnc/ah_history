@@ -107,9 +107,12 @@ getText(chat) {
     if (typeof chat === 'string') {
       return chat;
     } else {
+      const isArray = Array.isArray(chat.descr)
+      if (Array.isArray(chat.descr) chat = chat.descr[0]
+      if (typeof chat === 'string') return chat
       if (chat.text) return chat.text + ""
-      if (chat.content) return chat.content + ""
-      if (chat.descr) return chat.descr + ""
+      if (chat.content) return JSON.stringify(chat.content)
+      return chat + ''  
     }
   }
 
