@@ -103,12 +103,13 @@ groupByDate(chats) {
 }
 
 getText(chat) {
-    // if string, return string
+    console.log({chat})
     if (typeof chat === 'string') {
       return chat;
     } else {
-      const isArray = Array.isArray(chat.descr)
+
       if (Array.isArray(chat.descr) chat = chat.descr[0]
+      console.log({chat})
       if (typeof chat === 'string') return chat
       if (chat.text) return chat.text + ""
       if (chat.content) return JSON.stringify(chat.content)
@@ -121,7 +122,7 @@ renderChat(chat) {
     return html`
         <div class="chat-item">
             <a href="/session/${this.agent_name}/${chat.log_id}" target="_blank">
-                <li>"${this.getText(chat.descr).substring(0, 50)}..."</li>
+                <li>"${this.getText(chat).substring(0, 50)}..."</li>
             </a>
         </div>
     `;
