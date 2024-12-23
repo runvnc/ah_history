@@ -3,7 +3,7 @@ import { BaseEl } from './base.js';
 
 console.log("chat-history.js loaded");
 
-export class ChatHistory extends BaseEl {
+export class ChatSessions extends BaseEl {
   static properties = {
     user: { type: String },
     agent_name: { type: String },
@@ -138,4 +138,4 @@ _render() {
 
 }
 
-customElements.define('chat-history', ChatHistory);
+customElements.define('chat-sessions', ChatSessions);
