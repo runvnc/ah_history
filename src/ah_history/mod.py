@@ -26,7 +26,7 @@ async def recent_chats(path: str) -> list:
         for file in os.listdir(path):
             files.append(file)
         files.sort(key=lambda x: os.path.getmtime(os.path.join(path, x)), reverse=True)
-        chats = files[:30]
+        chats = files[:130]
         results = []
         for chat in chats:
             with open(f"{path}/{chat}", "r") as f:
