@@ -66,7 +66,7 @@ async def get_session_list(request: Request, agent: str = "/") -> JSONResponse:
     """
     try:
         user = request.state.user
-        dir = f"data/chat/{agent}"
+        dir = f"data/chat/{user}/{agent}"
         chat = await recent_chats(dir)
         return JSONResponse(chat)
     except Exception as e:
