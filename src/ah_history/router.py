@@ -42,11 +42,10 @@ async def recent_chats(path):
 @router.get("/session_list/{agent}")
 async def get_session_list(request: Request, agent: str = "/"):
     try:
-        user = request.state.user
+        user = request.state.user.username
         root = os.getcwd()
-        dir = f"{root}/data/chat/{agent}"
+        dir = f"{root}/data/chat/{user}/{agent}"
         print("ah_history dir is", dir)
-        #dir = f"data/chat/{user}/{agent}"
         chat = await recent_chats(dir)
         return JSONResponse(chat)
     except Exception as e:
