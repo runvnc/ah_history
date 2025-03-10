@@ -111,6 +111,7 @@ getText(chat) {
       if (Array.isArray(chat.descr)) chat = chat.descr[0]
       console.log({chat})
       if (typeof chat === 'string') return chat
+      if (chat.descr) return chat.descr
       if (chat.text) return chat.text + ""
       if (chat.content) return JSON.stringify(chat.content)
       return chat + ''  
