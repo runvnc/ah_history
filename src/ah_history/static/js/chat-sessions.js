@@ -36,6 +36,7 @@ export class ChatSessions extends BaseEl {
 .chat-item {
   font-size: 0.8em;
   width: 95%;
+  max-width: 400px;
   text-decoration: none;
 }
 
