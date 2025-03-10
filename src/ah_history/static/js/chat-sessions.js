@@ -123,7 +123,7 @@ renderChat(chat) {
     return html`
         <div class="chat-item">
             <a href="/session/${this.agent_name}/${chat.log_id}" target="_blank">
-                <li>"${this.getText(chat).substring(0, 115}..."</li>
+                <li>"${this.getText(chat).substring(0, 115)}..."</li>
             </a>
         </div>
     `;
