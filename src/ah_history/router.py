@@ -12,8 +12,11 @@ async def recent_chats(path):
     try:
         print("recent_chats. dir = ", path)
         files = []
+        # we must only process files, not directories
+        #for file in os.listdir(path):
         for file in os.listdir(path):
-            files.append(file)
+            if os.path.isfile(os.path.join(path, file)):
+                files.append(file)
         files.sort(key=lambda x: os.path.getmtime(os.path.join(path, x)), reverse=True)
         print(files)
         chats = files[:150]
