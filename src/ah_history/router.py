@@ -32,12 +32,10 @@ async def recent_chats(path):
                 })
         print(results)
         return results
-    except PermissionError:
-        raise("Permission denied")
     except Exception as e:
         print("Error in recent_chats")
         print(e)
-        raise(str(e))
+        raise(e)
 
 @router.get("/session_list/{agent}")
 async def get_session_list(request: Request, agent: str = "/"):
